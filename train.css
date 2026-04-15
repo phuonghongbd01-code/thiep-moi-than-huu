@@ -256,3 +256,14 @@
   box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
   line-height: 1.2;
 }
+
+@media (max-width: 600px) {
+  .train-wrapper {
+    transform: translateX(calc(-50vw - 800px)) scale(0.5);
+  }
+  @keyframes trainArrive {
+    0% { transform: translateX(calc(-50vw - 800px)) scale(0.5); }
+    100% { transform: translateX(0) scale(0.5); }
+  }
+}
+

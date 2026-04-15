@@ -339,7 +339,6 @@ body, html {
   .body-text, .invite-details { font-size: 1.3rem; }
   .vintage-title { font-size: 1.5rem; }
   .closing { font-size: 1.1rem; }
-  .train-wrapper { transform: scale(0.5); margin-left: -350px; }
 }
 
 /* Form Reply Styles */
