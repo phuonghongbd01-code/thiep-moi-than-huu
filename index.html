@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi chút kỷ niệm...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./train.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Thẻ audio (ẩn), chèn nhạc "Một Mai Giã Từ Vũ Khí" -->
+  <audio id="bg-music" src="./assets/music.mp3" loop></audio>
+
+  <!-- Màn hình Canvas tạo hiệu ứng hoa rơi -->
+  <canvas id="petal-canvas"></canvas>
+
+  <div class="wrapper">
+    <!-- Nút bật tắt nhạc -->
+    <button id="music-toggle" class="music-toggle hidden">
+        <span class="music-icon" id="music-icon">🎵</span>
+    </button>
+
+    <!-- Màn hình mở bao thư -->
+    <section id="envelope-stage" class="stage active">
+      <div class="envelope-container">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-ribbon" id="envelope-ribbon">
+               <div class="bow"></div>
+            </div>
+          </div>
+          <div class="click-to-open">Nhấn để mở phong thư</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Màn hình thư chính (hiện ra sau khi mở thư) -->
+    <section id="letter-stage" class="stage hidden">
+      <div class="letter-content" id="letter-content">
+        <div class="header-section text-center">
+          <h1 class="main-title">Gửi đến anh chị team mình<br>đã cùng em đi qua 3 năm...</h1>
+          <p class="body-text">3 năm không quá dài nhưng đủ để biến những người lạ trở nên thân.<br>Cảm ơn mọi người đã là một phần trong hành trình của em.</p>
+        </div>
+
+        <div class="train-scene-container" id="train-scene-container">
+          <div class="station-pole">
+             <div class="pole-sign">Tiến Đức<br>Phát</div>
+          </div>
+          <div class="train-wrapper" id="train">
+            <div class="train-car">
+              <div class="train-roof"></div>
+              <div class="train-windows">
+                 <div class="window"></div>
+                 <div class="door-frame">
+                    <div class="door-half door-left" id="door-left"></div>
+                    <div class="door-half door-right" id="door-right"></div>
+                    <div class="girl-silhouette" id="girl-silhouette">
+                        <img id="chibi-img" src="./assets/chibi.png" alt="Chibi Nữ" style="width: 160px; height: auto;" />
+                    </div>
+                    <div class="farewell-bubble" id="farewell-bubble">Tạm biệt Ace! 👋</div>
+                 </div>
+                 <div class="window"></div>
+                 <div class="window"></div>
+              </div>
+              <div class="train-bottom">
+                 <div class="wheel"></div><div class="wheel"></div>
+                 <div class="wheel"></div><div class="wheel"></div>
+                 <div class="wheel"></div><div class="wheel"></div>
+              </div>
+            </div>
+          </div>
+          <div class="scene-platform"></div>
+        </div>
+
+        <!-- Màn hình tương tác cuối -->
+        <div class="end-section" id="interactive-end">
+          
+          <div class="secret-content">
+            <h2 class="vintage-title">Họp mặt Ace thân hữu ăn mừng tự do</h2>
+            <div class="invite-details">
+              <p><strong>📍 Địa điểm:</strong> Dê Ninh Bình</p>
+              <p><strong>⏰ Thời gian:</strong> 17h30 Thứ sáu ngày 17/4</p>
+            </div>
+            <p class="closing">"Ga tàu này em xuống trước, hữu duyên gặp mọi người ở bến tiếp theo"</p>
+            
+            <div class="reply-section">
+              <textarea id="reply-message" placeholder="Nhắn nhủ vài dòng gửi đến em để lưu làm kỷ niệm nhé mn..."></textarea>
+              <button id="btn-send-reply">Gửi lời nhắn</button>
+              <p id="reply-status" class="hidden">Cảm ơn lời nhắn nhủ của bạn! ❤️</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
