@@ -57,7 +57,7 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   pointer-events: none; /* By default no pointer interaction until end */
   z-index: 10;
@@ -332,12 +332,14 @@ body, html {
 @media (max-width: 600px) {
   .envelope { width: 300px; height: 214px; }
   .envelope-flap { border-left: 150px solid transparent; border-right: 150px solid transparent; border-top: 110px solid #c0a894; }
+  .envelope-flap::after { top: -110px; left: -150px; width: 300px; height: 110px; }
+  .envelope-body::before { border-left: 150px solid #baa18c; border-right: 150px solid #baa18c; border-bottom: 100px solid #a88e7a; border-top: 110px solid transparent; }
   .letter-content { padding: 40px 20px 40px 70px; } /* Giữ lề đỏ */
   .main-title { font-size: 1.6rem; }
-  .body-text, .invite-details { font-size: 1.5rem; }
+  .body-text, .invite-details { font-size: 1.3rem; }
   .vintage-title { font-size: 1.5rem; }
   .closing { font-size: 1.1rem; }
-  .train-wrapper { transform: translateX(calc(-50vw - 800px)) scale(0.6); margin-left: -200px; }
+  .train-wrapper { transform: scale(0.5); margin-left: -350px; }
 }
 
 /* Form Reply Styles */
